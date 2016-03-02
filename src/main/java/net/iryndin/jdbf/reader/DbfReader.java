@@ -23,6 +23,7 @@ public class DbfReader implements Closeable {
     public DbfReader(File dbfFile, File memoFile) throws IOException {
         this.dbfInputStream = new BufferedInputStream(new FileInputStream(dbfFile), BUFFER_SIZE);
         this.memoReader = new MemoReader(new FileInputStream(memoFile), memoFile);
+        readMetadata();
     }
 
     public DbfReader(InputStream dbfInputStream) throws IOException {
