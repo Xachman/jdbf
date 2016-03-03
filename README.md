@@ -1,7 +1,7 @@
 jdbf
+====
 
 I had an issue with my memos java.io.IOException: Resetting to invalid mark - on getMemoAsString() exception. This has to do with the buffer size and the reset and skip functions in the memoReader class. To fix this I made it so each read opens a new buffered input stream and closes it so there is no need for the reset and skip functions. The only issue is that you cant pass input streams into the DbfReader class you must pass file objects.
-====
 
 [![Join the chat at https://gitter.im/iryndin/jdbf](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/iryndin/jdbf?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
